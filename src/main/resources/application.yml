@@ -1,0 +1,20 @@
+server:
+  port: 8066
+
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: MYSQL
+    continue-on-error: false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 123456
+    schema:
+      - classpath:sql/schema.sql
+      - classpath:sql/data.sql
+    initialization-mode: ALWAYS # ALWAYS 总是执行, EMBEDDED , NEVER 从不执行;
